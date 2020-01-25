@@ -102,7 +102,7 @@ router.put('/:id/actions/:id', (req,res)=> {
         if(!actions) {
             res.status(404).json({ message: `This project with the specific id, ${req.params.id} does not exist.` })
         }
-        else if(!actionChanges.project_id || !actionChanges.description || actionChanges.notes) {
+        else if(!actionChanges.project_id || !actionChanges.description || !actionChanges.notes) {
             res.status(400).json({ errorMessage: "Please provide project id, description, and notes." })
         }
         else {
